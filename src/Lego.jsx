@@ -1,5 +1,5 @@
 import { useTexture } from "@react-three/drei";
-import { DoubleSide } from "three";
+
 
 export default function Lego() {
     const PATH = "/static/textures/lego/"
@@ -11,9 +11,9 @@ export default function Lego() {
         aoMap: PATH + 'ao.jpg',
     })
     return (
-        <mesh>
+        <mesh castShadow>
             <boxGeometry args={[1, 1, 2]} />
-            <meshStandardMaterial {...props} side={DoubleSide} />
+            <meshStandardMaterial {...props} />
         </mesh>
     )
 }
